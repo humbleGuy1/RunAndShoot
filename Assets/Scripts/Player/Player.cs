@@ -7,9 +7,21 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> BulletsChanged;
 
+    public int Bullets => _bullets;
+
+    private void Start()
+    {
+        BulletsChanged?.Invoke(_bullets);
+    }
     public void AddBullet()
     {
         _bullets++;
+        BulletsChanged?.Invoke(_bullets);
+    }
+
+    public void SpendBullet()
+    {
+        _bullets--;
         BulletsChanged?.Invoke(_bullets);
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Bullet : MonoBehaviour
+public class PickUpBullet : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private float _approachSpeed;
