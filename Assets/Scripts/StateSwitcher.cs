@@ -8,7 +8,8 @@ public class StateSwitcher : MonoBehaviour
     [SerializeField] private Turret _turret;
     [SerializeField] private TurretController _turretController;
 
-    public event UnityAction CameraSwithed;
+    public event UnityAction CameraSwithedToShooting;
+    public event UnityAction CameraSwithedToRunning;
 
     private Mover _mover;
 
@@ -30,11 +31,14 @@ public class StateSwitcher : MonoBehaviour
         _mover.enabled = false;
         _turret.enabled = true;
         _turretController.enabled = true;
-        CameraSwithed?.Invoke();
+        CameraSwithedToShooting?.Invoke();
     }
 
     private void SwitchToRunning()
     {
-
+        _mover.enabled = true;
+        _turret.enabled = false;
+        _turretController.enabled = false;
+        CameraSwithedToRunning?.Invoke();
     }
 }

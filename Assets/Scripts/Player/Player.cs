@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     {
         BulletsChanged?.Invoke(_bullets);
     }
+
     public void AddBullet()
     {
         _bullets++;

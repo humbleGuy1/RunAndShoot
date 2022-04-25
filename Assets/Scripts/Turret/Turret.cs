@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [SerializeField] private float _spawnDelay;
     [SerializeField] private Player _player;
+    [SerializeField] private ParticleSystem _shotEffect;
 
     private Animator _animator;
     private float _timer;
@@ -28,6 +29,7 @@ public class Turret : MonoBehaviour
                 Shoot();
                 _timer = 0;
             }
+
             _timer += Time.deltaTime;
         }
     }
@@ -36,6 +38,7 @@ public class Turret : MonoBehaviour
     {
         Instantiate(_bulletPrefab,_firePoint.position, _firePoint.rotation);
         _animator.Play(RotateBarel);
+        _shotEffect.Play();
         _player.SpendBullet();
     }
 }

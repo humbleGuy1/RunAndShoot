@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             Destroy(enemy.gameObject);
-            Destroy(gameObject);
         }
+            Destroy(gameObject);
     }
 }

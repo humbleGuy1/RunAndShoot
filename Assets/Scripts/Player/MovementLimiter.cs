@@ -16,14 +16,7 @@ public class MovementLimiter : MonoBehaviour
 
     private void Update()
     {
-        if (_player.transform.position.x > _sideBorder)
-        {
-            _player.transform.position = new Vector3(_sideBorder, _player.transform.position.y, _player.transform.position.z);
-        }
-
-        if (_player.transform.position.x < -_sideBorder)
-        {
-            _player.transform.position = new Vector3(-_sideBorder, _player.transform.position.y, _player.transform.position.z);
-        }
+        _player.transform.position = new Vector3(Mathf.Clamp(_player.transform.position.x, -_sideBorder, _sideBorder),
+            transform.position.y, _player.transform.position.z);
     }
 }
