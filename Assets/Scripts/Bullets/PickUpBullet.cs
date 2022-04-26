@@ -8,21 +8,24 @@ public class PickUpBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out ExtraCollider collider))
+        if (other.TryGetComponent(out TakeBulletCollider _))
         {
             StartCoroutine(MoveToPlayer());
         }
 
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out DestroyBulletCollider _))
         {
-            player.AddBullet();
+            _player.AddBullet();
             Destroy(gameObject);
         }
     }
 
     private IEnumerator MoveToPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _approachSpeed * Time.deltaTime);
-        yield return null;
+        while(transform.position != _player.transform.position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _approachSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
 }

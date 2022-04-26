@@ -21,7 +21,7 @@ public class TurretController : MonoBehaviour
 
     private void LimitRotation()
     {
-        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 
+        transform.rotation = new Quaternion(transform.rotation.x, Mathf.Clamp(transform.rotation.y, -_rotationBorderY, _rotationBorderY),
             transform.rotation.z, transform.rotation.w);
     }
 }
