@@ -16,6 +16,7 @@ public class PickUpBullet : MonoBehaviour
         if (other.TryGetComponent(out DestroyBulletCollider _))
         {
             _player.AddBullet();
+            _player.ActivateTakeBulletEffect();
             Destroy(gameObject);
         }
     }

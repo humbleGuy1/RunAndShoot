@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _bullets;
+    [SerializeField] private ParticleSystem _takeBulletEffect;
 
     public event UnityAction<int> BulletsChanged;
 
@@ -24,5 +25,10 @@ public class Player : MonoBehaviour
     {
         _bullets--;
         BulletsChanged?.Invoke(_bullets);
+    }
+
+    public void ActivateTakeBulletEffect()
+    {
+        _takeBulletEffect.Play();
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +10,9 @@ public class StateSwitcher : MonoBehaviour
 
     public event UnityAction CameraSwithedToShooting;
     public event UnityAction CameraSwithedToRunning;
+
+    public event UnityAction BulletCounterMoveDown;
+    public event UnityAction BulletCounterMoveUp;
 
     private Mover _mover;
 
@@ -33,6 +35,7 @@ public class StateSwitcher : MonoBehaviour
         _turret.enabled = true;
         _turretController.enabled = true;
         CameraSwithedToShooting?.Invoke();
+        BulletCounterMoveDown?.Invoke();
     }
 
     private void SwitchToRunning()
@@ -41,5 +44,6 @@ public class StateSwitcher : MonoBehaviour
         _turret.enabled = false;
         _turretController.enabled = false;
         CameraSwithedToRunning?.Invoke();
+        BulletCounterMoveUp?.Invoke();
     }
 }
