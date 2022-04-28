@@ -21,6 +21,18 @@ public class Player : MonoBehaviour
         BulletsChanged?.Invoke(_bullets);
     }
 
+    public void AddBullets(int value)
+    {
+        _bullets += value;
+        BulletsChanged?.Invoke(_bullets);
+    }
+
+    public void MultiplyBullets(int value)
+    {
+        _bullets *= value;
+        BulletsChanged?.Invoke(_bullets);
+    }
+
     public void SpendBullet()
     {
         _bullets--;

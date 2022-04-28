@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Mover))]
-
 public class StateSwitcher : MonoBehaviour
 {
+    [SerializeField] private Player _player;
+    [SerializeField] private Mover _mover;
     [SerializeField] private Turret _turret;
     [SerializeField] private TurretController _turretController;
 
@@ -14,8 +14,6 @@ public class StateSwitcher : MonoBehaviour
     public event UnityAction BulletCounterMoveDown;
     public event UnityAction BulletCounterMoveUp;
 
-    private Mover _mover;
-
     private void Start()
     {
         _mover = GetComponent<Mover>();
@@ -23,14 +21,16 @@ public class StateSwitcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Turret turret))
+        if(other.TryGetComponent(out SwitchToShootingTrigger shootingTrigger))
         {
             SwitchToShooting();
+            Destroy(shootingTrigger);
         }
     }
 
     private void SwitchToShooting()
     {
+        Debug.Log("SwitchedToShooting");
         _mover.enabled = false;
         _turret.enabled = true;
         _turretController.enabled = true;
@@ -38,8 +38,10 @@ public class StateSwitcher : MonoBehaviour
         BulletCounterMoveDown?.Invoke();
     }
 
-    private void SwitchToRunning()
+    public void SwitchToRunning()
     {
+        Debug.Log("SwitchedToRunning");
+        _player.transform.position = new Vector3(0, _player.transform.position.y, _player.transform.position.z);
         _mover.enabled = true;
         _turret.enabled = false;
         _turretController.enabled = false;

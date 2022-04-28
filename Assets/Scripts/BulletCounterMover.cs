@@ -5,13 +5,12 @@ public class BulletCounterMover : MonoBehaviour
 {
     [SerializeField] private StateSwitcher _stateSwitcher;
     [SerializeField] private Image _counter;
+    [SerializeField] private RectTransform _startPoint;
     [SerializeField] private RectTransform _targetPoint;
-    
-    private RectTransform _startPoint;
 
     private void Start()
     {
-        _startPoint.position = _counter.rectTransform.position;
+           
     }
 
     private void OnMoveDown()
