@@ -390,9 +390,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.32978988
-  m_Height: 1.9576144
+  m_Height: 1.9206077
   m_Direction: 1
-  m_Center: {x: 0, y: 0.88211966, z: 0}
+  m_Center: {x: 0, y: 0.9006229, z: 0}
 --- !u!114 &-4800346691363702235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullets: 50
   _takeBulletEffect: {fileID: 6140221443290095014}
-  _stateSwitcher: {fileID: 0}
 --- !u!114 &4678901765730972570
 MonoBehaviour:
   m_ObjectHideFlags: 0

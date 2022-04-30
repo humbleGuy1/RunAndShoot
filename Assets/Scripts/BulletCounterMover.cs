@@ -8,11 +8,6 @@ public class BulletCounterMover : MonoBehaviour
     [SerializeField] private RectTransform _startPoint;
     [SerializeField] private RectTransform _targetPoint;
 
-    private void Start()
-    {
-           
-    }
-
     private void OnMoveDown()
     {
         _counter.rectTransform.position = _targetPoint.position;

@@ -304,6 +304,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 420815602803555899}
     m_Modifications:
+    - target: {fileID: 4673604165904272466, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673604165904272466, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673604165904272466, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
     - target: {fileID: 6475778874492549197, guid: 26e96d7fae23541449249002b44726a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -374,10 +389,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6485400422276986128, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485400422276986128, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485400422276986128, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982977533639888062, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982977533639888062, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982977533639888062, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982977533639888062, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
     - target: {fileID: 7244438173356820602, guid: 26e96d7fae23541449249002b44726a2,
         type: 3}
       propertyPath: m_Name
       value: PE_CartoonyPunchLight (UnityEngine.GameObject)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684261602760719172, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684261602760719172, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684261602760719172, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684261602760719172, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684261602760719172, guid: 26e96d7fae23541449249002b44726a2,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e96d7fae23541449249002b44726a2, type: 3}

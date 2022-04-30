@@ -3,12 +3,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(EnemyMover))]
+[RequireComponent(typeof(ColorChanger))]
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private StateSwitcher _stateSwitcher;
+
     private Animator _animator;
     private EnemyMover _enemyMover;
+    private ColorChanger _colorChanger;
     private const string Death = "Death";
     private bool _isDead;
 
@@ -18,6 +21,7 @@ public class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _enemyMover = GetComponent<EnemyMover>();
+        _colorChanger = GetComponent<ColorChanger>();
         _isDead = false;
     }
 
@@ -27,10 +31,10 @@ public class Enemy : MonoBehaviour
         {
             _enemyMover.enabled = false;
             _isDead = true;
-            _stateSwitcher.SwitchToRunning();
-            Destroy(gameObject);
+            //_stateSwitcher.SwitchToRunning();
+            //Destroy(gameObject);
 
-            //StartCoroutine(Die());
+            StartCoroutine(Die());
         }
     }
 
@@ -39,6 +43,7 @@ public class Enemy : MonoBehaviour
         var waitForSeconds = new WaitForSeconds(2f);
         
         _animator.Play(Death);
+        _colorChanger.Change();
 
         yield return waitForSeconds;
 
