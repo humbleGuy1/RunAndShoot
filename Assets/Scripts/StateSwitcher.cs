@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Mover))]
+
 public class StateSwitcher : MonoBehaviour
 {
-    [SerializeField] private Player _player;
-    [SerializeField] private Mover _mover;
     [SerializeField] private Turret _turret;
     [SerializeField] private TurretController _turretController;
 
+    private Mover _mover;
+    
     public event UnityAction CameraSwithedToShooting;
     public event UnityAction CameraSwithedToRunning;
 
@@ -41,7 +43,7 @@ public class StateSwitcher : MonoBehaviour
     public void SwitchToRunning()
     {
         Debug.Log("SwitchedToRunning");
-        _player.transform.position = new Vector3(0, _player.transform.position.y, _player.transform.position.z);
+        transform.position = new Vector3(0, transform.position.y, transform.position.z);
         _mover.enabled = true;
         _turret.enabled = false;
         _turretController.enabled = false;

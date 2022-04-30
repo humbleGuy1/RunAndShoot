@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36fd3da1eb820046bedaf70639bea30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullets: 50
+  _bullets: 80
   _takeBulletEffect: {fileID: 6140221443290095014}
 --- !u!114 &4678901765730972570
 MonoBehaviour:

@@ -14,12 +14,11 @@ public class EnemyCounter : MonoBehaviour
         _enemies = FindObjectsOfType<Enemy>();
         _currentEnemies.text = _enemies.Length.ToString();
 
-        if(_enemies.Length == 0)
+        if(_enemies.Length <= 1)
         {
             _stateSwitcher.SwitchToRunning();
             _gate.gameObject.SetActive(true);
             Destroy(gameObject);
         }
-
     }
 }

@@ -184,7 +184,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: -7760924654690944205, guid: 7ce0d1efe8ce99245822a0eff64a6222,
     type: 3}
   _firePoint: {fileID: 943817285}
-  _spawnDelay: 0.1
+  _spawnDelay: 0.05
   _player: {fileID: 0}
   _shotEffect: {fileID: 4071944603113159296}
 --- !u!114 &-6748602389048108487

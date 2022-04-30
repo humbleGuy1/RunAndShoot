@@ -4,25 +4,25 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(EnemyMover))]
 [RequireComponent(typeof(ColorChanger))]
+[RequireComponent (typeof(CapsuleCollider))]
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private StateSwitcher _stateSwitcher;
+    [SerializeField] private ParticleSystem _bloodExplosion;
+    [SerializeField] private ParticleSystem _bloodPuddle;
 
     private Animator _animator;
     private EnemyMover _enemyMover;
     private ColorChanger _colorChanger;
+    private CapsuleCollider _collider;
     private const string Death = "Death";
-    private bool _isDead;
-
-    public bool IsDead => _isDead;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _enemyMover = GetComponent<EnemyMover>();
         _colorChanger = GetComponent<ColorChanger>();
-        _isDead = false;
+        _collider = GetComponent<CapsuleCollider>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -30,9 +30,8 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out Bullet bullet))
         {
             _enemyMover.enabled = false;
-            _isDead = true;
-            //_stateSwitcher.SwitchToRunning();
-            //Destroy(gameObject);
+            _collider.enabled = false;
+
 
             StartCoroutine(Die());
         }
@@ -40,9 +39,11 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Die()
     {
-        var waitForSeconds = new WaitForSeconds(2f);
+        var waitForSeconds = new WaitForSeconds(1f);
         
         _animator.Play(Death);
+        _bloodExplosion.Play();
+        _bloodPuddle.Play();
         _colorChanger.Change();
 
         yield return waitForSeconds;
