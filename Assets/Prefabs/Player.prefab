@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 4678901765730972570}
   - component: {fileID: 6751549811193929687}
   - component: {fileID: 462021398}
+  - component: {fileID: 1284884831}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -390,9 +391,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.32978988
-  m_Height: 1.9206077
+  m_Height: 1.9950423
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9006229, z: 0}
+  m_Center: {x: -2.2437678e-22, y: 0.8634056, z: 1.9938317e-15}
 --- !u!114 &-4800346691363702235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36fd3da1eb820046bedaf70639bea30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullets: 80
+  _bullets: 70
   _takeBulletEffect: {fileID: 6140221443290095014}
 --- !u!114 &4678901765730972570
 MonoBehaviour:
@@ -420,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
+  _jumpForce: 3
 --- !u!114 &6751549811193929687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +447,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0955072c14c5144ca0f775a430a44ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: -4800346691363702235}
-  _mover: {fileID: 4678901765730972570}
+  _turret: {fileID: 0}
+  _turretController: {fileID: 0}
+--- !u!114 &1284884831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2483301181404263055}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0955072c14c5144ca0f775a430a44ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _turret: {fileID: 0}
   _turretController: {fileID: 0}
 --- !u!1 &2483301181404263057

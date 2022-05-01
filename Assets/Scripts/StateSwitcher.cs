@@ -43,7 +43,8 @@ public class StateSwitcher : MonoBehaviour
     public void SwitchToRunning()
     {
         Debug.Log("SwitchedToRunning");
-        transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        _mover.ResetPosition();
+        _mover.Jump();
         _mover.enabled = true;
         _turret.enabled = false;
         _turretController.enabled = false;
