@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem _takeBulletEffect;
 
     public event UnityAction<int> BulletsChanged;
+    public event UnityAction<int> DifferenceShowed;
 
     public int Bullets => _bullets;
 
@@ -23,12 +24,16 @@ public class Player : MonoBehaviour
 
     public void AddBullets(int value)
     {
+        int difference = _bullets + value - _bullets;
+        DifferenceShowed?.Invoke(difference);
         _bullets += value;
         BulletsChanged?.Invoke(_bullets);
     }
 
     public void MultiplyBullets(int value)
     {
+        int difference = _bullets * value - _bullets;
+        DifferenceShowed?.Invoke(difference);
         _bullets *= value;
         BulletsChanged?.Invoke(_bullets);
     }

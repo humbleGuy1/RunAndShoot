@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
             _enemyMover.enabled = false;
             _collider.enabled = false;
 
-
             StartCoroutine(Die());
         }
     }

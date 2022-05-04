@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jumping
-  m_Speed: 1.8
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4608230509568288628}
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: be19c9193829f7e42ab631566a665e9e,
+  m_Motion: {fileID: -203655887218126122, guid: 18602329c162d4c449e3c8fa2b44154f,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
