@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int _bullets;
     [SerializeField] private ParticleSystem _takeBulletEffect;
+    [SerializeField] private BulletsGroup _bulletsGroup;
 
     public event UnityAction<int> BulletsChanged;
     public event UnityAction<int> DifferenceShowed;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     {
         _bullets--;
         BulletsChanged?.Invoke(_bullets);
+        _bulletsGroup.HideBullet();
     }
 
     public void ActivateTakeBulletEffect()

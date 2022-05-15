@@ -14,6 +14,7 @@ public class Mover : MonoBehaviour
     private Animator _animator;
     private Rigidbody _rigidbody;
     private const string Jumping = "Jumping";
+    private const string Dancing = "Dancing";
  
     private void Start()
     {
@@ -32,9 +33,14 @@ public class Mover : MonoBehaviour
         _animator.Play(Jumping);
     }
 
-    public void ResetPosition()
+    public void ResetPositionX()
     {
         transform.position = new Vector3(0, transform.position.y, transform.position.z);
+    }
+
+    public void StartDancing()
+    {
+        _animator.Play(Dancing);
     }
 
     private void Move()

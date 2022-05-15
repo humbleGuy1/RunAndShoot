@@ -6,6 +6,8 @@ public class EnemyCounter : MonoBehaviour
     [SerializeField] private TMP_Text _currentEnemies;
     [SerializeField] private StateSwitcher _stateSwitcher;
     [SerializeField] private Gate _gate;
+    [SerializeField] private bool _toRunningState;
+    [SerializeField] private bool _toDancingState;
 
     private Enemy[] _enemies;
 
@@ -16,7 +18,16 @@ public class EnemyCounter : MonoBehaviour
 
         if(_enemies.Length <= 1)
         {
-            _stateSwitcher.SwitchToRunning();
+            if (_toRunningState)
+            {
+                _stateSwitcher.SwitchToRunning();
+            }
+
+            if (_toDancingState)
+            {
+                _stateSwitcher.SwitchToDancing();
+            }
+
             _gate.gameObject.SetActive(true);
             Destroy(gameObject);
         }

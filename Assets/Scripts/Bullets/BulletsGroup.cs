@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletsCounter : MonoBehaviour
+public class BulletsGroup : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private List<MovingBullet> _bullets;
 
-    private void Start()
+    private void Awake()
     {
         foreach(var bullet in _bullets)
         {
@@ -20,5 +20,10 @@ public class BulletsCounter : MonoBehaviour
         {
             _bullets[i].gameObject.SetActive(true);
         }
+    }
+
+    public void HideBullet()
+    {
+        _bullets[_player.Bullets].gameObject.SetActive(false);
     }
 }
