@@ -217,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 0}
   _turretCamera: {fileID: 0}
+  _danceCamera: {fileID: 0}
   _stateSwitcher: {fileID: 0}
 --- !u!82 &7120567058177964968
 AudioSource:

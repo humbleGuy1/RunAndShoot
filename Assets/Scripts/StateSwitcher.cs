@@ -39,8 +39,8 @@ public class StateSwitcher : MonoBehaviour
     {
         Debug.Log("SwitchedToRunning");
         _mover.ResetPositionX();
-        _mover.Jump();
         _mover.enabled = true;
+        _mover.JumpAfterShooting();
         _turret.enabled = false;
         _turretController.enabled = false;
         CameraSwithedToRunning?.Invoke();

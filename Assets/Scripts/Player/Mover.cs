@@ -7,14 +7,16 @@ using DG.Tweening;
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _jumpForceAfterShooting;
+    [SerializeField] private float _jumpForcePlatform;
     [SerializeField] private float _rotationdDegree;
     [SerializeField] private float _rotationdDuration;
 
     private Animator _animator;
     private Rigidbody _rigidbody;
-    private const string Jumping = "Jumping";
+    private bool _isOnGround;
     private const string Dancing = "Dancing";
+    private const string IsOnGround = "IsOnGround";
  
     private void Start()
     {
@@ -25,12 +27,13 @@ public class Mover : MonoBehaviour
     private void Update()
     {
         Move();
+        _animator.SetBool(IsOnGround, _isOnGround);
     }
 
-    public void Jump()
+    public void JumpAfterShooting()
     {
-        _rigidbody.AddForce(Vector3.forward + Vector3.up * _jumpForce, ForceMode.Impulse);
-        _animator.Play(Jumping);
+        _rigidbody.AddForce(Vector3.up * _jumpForceAfterShooting, ForceMode.Impulse);
+        _isOnGround = false;
     }
 
     public void ResetPositionX()
@@ -70,11 +73,25 @@ public class Mover : MonoBehaviour
         transform.DORotate(new Vector3(0, degree, 0), _rotationdDuration);
     }
 
+    private void JumpAfterSteppingOnplatform()
+    {
+        _rigidbody.AddForce(Vector3.forward + Vector3.up * _jumpForcePlatform, ForceMode.Impulse);
+        _isOnGround = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Platform _))
         {
-            Jump();
+            JumpAfterSteppingOnplatform();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.TryGetComponent(out Ground _))
+        {
+            _isOnGround = true;
         }
     }
 }
