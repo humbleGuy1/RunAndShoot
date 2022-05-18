@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Linq;
+using System.Collections.Generic;
 
 public class EnemyCounter : MonoBehaviour
 {
@@ -9,14 +11,28 @@ public class EnemyCounter : MonoBehaviour
     [SerializeField] private bool _toRunningState;
     [SerializeField] private bool _toDancingState;
 
-    private Enemy[] _enemies;
+    private Enemy[] _enemiesArray;
+    private List<Enemy> _enemiesList;
+
+    private void Start()
+    {
+        _enemiesArray = FindObjectsOfType<Enemy>();
+        _enemiesList = _enemiesArray.OfType<Enemy>().ToList();
+    }
 
     private void Update()
     {
-        _enemies = FindObjectsOfType<Enemy>();
-        _currentEnemies.text = _enemies.Length.ToString();
+        foreach (var enemy in _enemiesList)
+        {
+            if (enemy.IsDead)
+            {
+                _enemiesList.Remove(enemy);
+            }
+        }
 
-        if(_enemies.Length <= 1)
+        _currentEnemies.text = _enemiesList.Count.ToString();
+
+        if(_enemiesList.Count == 0)
         {
             if (_toRunningState)
             {

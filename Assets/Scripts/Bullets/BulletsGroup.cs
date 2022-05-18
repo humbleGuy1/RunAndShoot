@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class BulletsGroup : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private List<MovingBullet> _bullets;
+    [SerializeField] private float _speed;
 
     private void Awake()
     {
@@ -25,5 +27,35 @@ public class BulletsGroup : MonoBehaviour
     public void HideBullet()
     {
         _bullets[_player.Bullets].gameObject.SetActive(false);
+    }
+
+    public void MoveBullets(int value)
+    {
+        List<MovingBullet> bulletsToMove = new List<MovingBullet>();
+
+        for(int i = _player.Bullets; i > _player.Bullets - value; i--)
+        {
+            bulletsToMove.Add(_bullets[i]);
+        }
+
+        foreach(var bullet in bulletsToMove)
+        {
+            bullet.transform.position = new Vector3(bullet.transform.position.x, bullet.transform.position.y, 
+                bullet.transform.position.z - 3f);
+            StartCoroutine(Moving(bullet));
+        }
+    }
+
+    private IEnumerator Moving(MovingBullet bullet)
+    {
+        float timer = 0;
+
+        while(timer <= 1f)
+        {
+            bullet.transform.Translate(_speed * Time.deltaTime * Vector3.forward, Space.World);
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
     }
 }

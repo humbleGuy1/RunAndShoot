@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class DisplayBullets : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Text _currentBullets;
+    [SerializeField] private TMP_Text _currentBullets;
 
     private void OnBulletsChanged(int value)
     {

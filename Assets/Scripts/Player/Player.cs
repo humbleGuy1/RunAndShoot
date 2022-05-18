@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
         DifferenceShowed?.Invoke(difference);
         _bullets += value;
         BulletsChanged?.Invoke(_bullets);
+        _bulletsGroup.MoveBullets(difference);
     }
 
     public void MultiplyBullets(int value)
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         DifferenceShowed?.Invoke(difference);
         _bullets *= value;
         BulletsChanged?.Invoke(_bullets);
+        _bulletsGroup.MoveBullets(difference);
     }
 
     public void SpendBullet()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8575151094203866947}
   - component: {fileID: 8575151094207204941}
+  - component: {fileID: 5144434160953464208}
   m_Layer: 0
   m_Name: Stickman_heads_sphere
   m_TagString: Untagged
@@ -112,6 +113,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000008940697, y: 0.89193386, z: -0.012163967}
     m_Extent: {x: 0.65829575, y: 0.9524551, z: 0.3219117}
   m_DirtyAABB: 0
+--- !u!114 &5144434160953464208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575151094204023585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8867d57323d6d458e9eec3fa078be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8575151094204023587
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bloodExplosion: {fileID: 5274061347300463947}
   _bloodPuddle: {fileID: 6135453553963278718}
+  _body: {fileID: 5144434160953464208}
 --- !u!114 &6664259194517281021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,6 +1277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776258362991070168, guid: a2501c53a56a3f8499d4170f9b08053f,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7776258362991070168, guid: a2501c53a56a3f8499d4170f9b08053f,
         type: 3}
