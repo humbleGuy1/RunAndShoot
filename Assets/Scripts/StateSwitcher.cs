@@ -8,7 +8,7 @@ public class StateSwitcher : MonoBehaviour
 {
     [SerializeField] private Turret _turret;
     [SerializeField] private TurretController _turretController;
-    [SerializeField] private BulletsGroup _bulletsCounter;
+    [SerializeField] private BulletsGroup _bulletsGroup;
     [SerializeField] private Image _bulletCounter;
     [SerializeField] private Confetti _confetti;
 
@@ -37,7 +37,6 @@ public class StateSwitcher : MonoBehaviour
 
     public void SwitchToRunning()
     {
-        Debug.Log("SwitchedToRunning");
         _mover.ResetPositionX();
         _mover.enabled = true;
         _mover.JumpAfterShooting();
@@ -49,13 +48,12 @@ public class StateSwitcher : MonoBehaviour
 
     public void SwitchToDancing()
     {
-        Debug.Log("SwitchedToDancing");
         _mover.ResetPositionX();
         _mover.StartDancing();
         _turret.enabled = false;
         _turretController.enabled = false;
         _turret.gameObject.SetActive(false);
-        _bulletsCounter.gameObject.SetActive(false);
+        _bulletsGroup.gameObject.SetActive(false);
         _bulletCounter.gameObject.SetActive(false);
         _confetti.gameObject.SetActive(true);
         CameraSwithedToDancing?.Invoke();
@@ -63,7 +61,6 @@ public class StateSwitcher : MonoBehaviour
 
     private void SwitchToShooting()
     {
-        Debug.Log("SwitchedToShooting");
         _mover.enabled = false;
         _turret.enabled = true;
         _turretController.enabled = true;

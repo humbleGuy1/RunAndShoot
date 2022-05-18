@@ -22,11 +22,11 @@ public class EnemyCounter : MonoBehaviour
 
     private void Update()
     {
-        foreach (var enemy in _enemiesList)
+        for(int i = 0; i < _enemiesList.Count; i++)
         {
-            if (enemy.IsDead)
+            if (_enemiesList[i].IsDead)
             {
-                _enemiesList.Remove(enemy);
+                _enemiesList.Remove(_enemiesList[i]);
             }
         }
 

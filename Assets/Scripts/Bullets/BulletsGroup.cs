@@ -7,6 +7,8 @@ public class BulletsGroup : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private List<MovingBullet> _bullets;
     [SerializeField] private float _speed;
+    [SerializeField] private float _movingDistanceZ;
+    [SerializeField] private float _movingTime;
 
     private void Awake()
     {
@@ -41,7 +43,7 @@ public class BulletsGroup : MonoBehaviour
         foreach(var bullet in bulletsToMove)
         {
             bullet.transform.position = new Vector3(bullet.transform.position.x, bullet.transform.position.y, 
-                bullet.transform.position.z - 3f);
+                bullet.transform.position.z - _movingDistanceZ);
             StartCoroutine(Moving(bullet));
         }
     }
@@ -50,7 +52,7 @@ public class BulletsGroup : MonoBehaviour
     {
         float timer = 0;
 
-        while(timer <= 1f)
+        while(timer <= _movingTime)
         {
             bullet.transform.Translate(_speed * Time.deltaTime * Vector3.forward, Space.World);
             timer += Time.deltaTime;

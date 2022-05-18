@@ -15,13 +15,5 @@ public class TurretController : MonoBehaviour
     private void Rotate()
     {
         transform.Rotate(0, Input.GetAxis(MouseX) * _mouseSense, 0);
-
-        //LimitRotation();
-    }
-
-    private void LimitRotation()
-    {
-        transform.rotation = new Quaternion(transform.rotation.x, Mathf.Clamp(transform.rotation.y, -_rotationBorderY, _rotationBorderY),
-            transform.rotation.z, transform.rotation.w);
     }
 }
