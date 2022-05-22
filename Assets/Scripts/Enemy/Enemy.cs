@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(EnemyMover))]
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     public bool IsDead => _isDead;
 
+    public event UnityAction Dead;
+
     private void Start()
     {
         _isDead = false;
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
             _enemyMover.enabled = false;
             _collider.enabled = false;
             _isDead = true;
+            Dead?.Invoke();
             StartCoroutine(Die());
         }
     }

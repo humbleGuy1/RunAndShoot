@@ -18,11 +18,17 @@ public class EnemyCounter : MonoBehaviour
     {
         _enemiesArray = FindObjectsOfType<Enemy>();
         _enemiesList = _enemiesArray.OfType<Enemy>().ToList();
+        _currentEnemies.text = _enemiesList.Count.ToString();
+
+        foreach (var enemy in _enemiesList)
+        {
+            enemy.Dead += OnEnemyDead;
+        }
     }
 
-    private void Update()
+    private void OnEnemyDead()
     {
-        for(int i = 0; i < _enemiesList.Count; i++)
+        for (int i = 0; i < _enemiesList.Count; i++)
         {
             if (_enemiesList[i].IsDead)
             {

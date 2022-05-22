@@ -1121,7 +1121,8 @@ PrefabInstance:
       propertyPath: _stateSwitcher
       value: 
       objectReference: {fileID: 1284884831}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7120567058177964968, guid: 1509c76e6e8138647b43e371aa44fb4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1509c76e6e8138647b43e371aa44fb4b, type: 3}
 --- !u!4 &110393410 stripped
 Transform:
@@ -7850,7 +7851,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635251684}
-  m_LocalRotation: {x: 0.0000000023651947, y: 0.99684584, z: -0.079362765, w: 0.000000029708321}
+  m_LocalRotation: {x: -0.0000000023651947, y: 0.99684584, z: -0.079362765, w: -0.000000029708321}
   m_LocalPosition: {x: 0, y: 1.9499989, z: 4.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30749,7 +30750,8 @@ PrefabInstance:
       propertyPath: _stateSwitcher
       value: 
       objectReference: {fileID: 462021398}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7120567058177964968, guid: 1509c76e6e8138647b43e371aa44fb4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1509c76e6e8138647b43e371aa44fb4b, type: 3}
 --- !u!1001 &5471225398631219805
 PrefabInstance:
